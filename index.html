@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Enhancer Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Enhancer</h1>
+        
+        <div class="upload-section">
+            <input type="file" id="imageInput" accept="image/*" hidden>
+            <button class="btn" onclick="document.getElementById('imageInput').click()">Upload Image</button>
+            <div class="image-info" id="fileName"></div>
+        </div>
+
+        <div class="comparison-section">
+            <div class="image-container">
+                <div class="before-label">Before</div>
+                <div class="after-label">After</div>
+                <canvas id="beforeCanvas"></canvas>
+                <canvas id="afterCanvas"></canvas>
+                <input type="range" id="slider" min="0" max="100" value="50">
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="adjustment-controls">
+                <div class="control-group">
+                    <label>Brightness</label>
+                    <input type="range" id="brightness" min="-100" max="100" value="0">
+                </div>
+                <div class="control-group">
+                    <label>Contrast</label>
+                    <input type="range" id="contrast" min="-100" max="100" value="0">
+                </div>
+                <div class="control-group">
+                    <label>Saturation</label>
+                    <input type="range" id="saturation" min="-100" max="100" value="0">
+                </div>
+                <div class="control-group">
+                    <label>Sharpness</label>
+                    <input type="range" id="sharpness" min="0" max="100" value="0">
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn" onclick="resetFilters()">Reset</button>
+                <button class="btn download-btn" onclick="downloadImage()">Download</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
